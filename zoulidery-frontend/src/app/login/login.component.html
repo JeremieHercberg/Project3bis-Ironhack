@@ -1,0 +1,19 @@
+<p>
+  login works!
+</p>
+<h2>Log In</h2>
+
+<form (ngSubmit)="loginSubmit()">
+  <label>
+    Username:
+    <input type="text" [(ngModel)]="formCreds.userName" name="username" placeholder="Batman">
+  </label>
+  <br>
+
+  <label>
+    Password:
+    <input type="password" [(ngModel)]="formCreds.password" name="password" placeholder="*****">
+  </label>
+
+  <button (click)="loginSubmit()">Log In</button>
+</form>

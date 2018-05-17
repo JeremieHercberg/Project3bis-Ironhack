@@ -1,0 +1,16 @@
+<p>
+  produit works!
+</p>
+
+<h2>Détail du Produit</h2>
+<p>{{produits?.name}}</p>
+<p>{{produits?.image}}</p>
+<p>{{produits?.description}}</p>
+<p>{{produits?.rating}}</p>
+<p>{{produits?.sellingPrice}}</p>
+<p>{{produits?.itemStock}}</p>
+<p>{{produits?.details}}</p>
+
+<div *ngIf="userTruc.currentUser && userTruc.currentUser.role === 'admin'">
+  <button (click)="deleteClick()">Retirer ce produit</button>
+</div>

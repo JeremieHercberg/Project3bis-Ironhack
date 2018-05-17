@@ -1,0 +1,54 @@
+<p>
+  boutique works!
+</p>
+
+<h2>Les Produits Zoulidery</h2>
+
+<label>
+  Trouver un produit :
+  <input [(ngModel)]="userInput" type="search" placeholder="...">
+</label>
+
+<!--DISPLAY ALL PRODUCTS-->
+<ul>
+  <li *ngFor="let oneProduit of produits | productsFilter : userInput">
+    <h3>{{oneProduit.name}}</h3>
+    <p>{{oneProduit.description}}</p>
+    <p>{{oneProduit.image}}</p>
+    <p>{{oneProduit.sellingPrice}}</p>
+    <p>{{oneProduit.itemStock}}</p>
+    <p>{{oneProduit.rating}}</p>
+    <p>{{oneProduit.details}}</p>
+    <a [routerLink]="['/produit', oneProduit._id]">En savoir plus</a>
+    <button>Ajouter le produit au panier</button>
+  </li>
+
+</ul>
+
+
+<!--ADMIN ONLY ADD A NEW PRODUCT -->
+<div *ngIf="userTruc.currentUser && userTruc.currentUser.role === 'admin'">
+  <form>
+    <label> Nom du produit : </label>
+    <input type="text" [(ngModel)]="newProduit.name" name="name">
+    <br>
+    <label> Image : </label>
+    <input type="text" [(ngModel)]="newProduit.image" name="image">
+    <br>
+    <label> Description : </label>
+    <input type="text" [(ngModel)]="newProduit.description" name="description">
+    <br>
+    <label>Note : </label>
+    <input type="number" [(ngModel)]="newProduit.rating" name="rating">
+    <br>
+    <label> Prix de vente : </label>
+    <input type="number" [(ngModel)]="newProduit.sellingPrice" name="sellingPrice">
+    <br>
+    <label> En stock : </label>
+    <input type="number" [(ngModel)]="newProduit.itemStock" name="itemStock">
+    <br>
+    <label> Détails : </label>
+    <input type="text" [(ngModel)]="newProduit.details" name="details">
+  </form>
+  <button (click)="addProduct()">Ajouter un produit</button>
+</div>

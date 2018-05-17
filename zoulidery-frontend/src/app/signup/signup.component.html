@@ -1,0 +1,39 @@
+<p>
+  signup works!
+</p>
+
+<h2>REJOIGNEZ L'UNIVERS ZOULIDERY</h2>
+
+<form (ngSubmti)="signupSubmit()">
+  <label>
+    Prénom :
+    <input type="text" [(ngModel)]="formCreds.firstName" required name="firstname" placeholder="Marie">
+  </label>
+  <br>
+  <label>
+    Nom :
+    <input type="text" [(ngModel)]="formCreds.lastName" name="lastname" placeholder="Durand">
+  </label>
+  <br>
+  <label>
+    Username :
+    <input type="text" [(ngModel)]="formCreds.userName" name="username" placeholder="MarieD">
+  </label>
+  <br>
+  <label>
+    Adresse Email :
+    <input type="text" [(ngModel)]="formCreds.emailAddress" name="username" placeholder="m@gmail.vom">
+  </label>
+  <br>
+  <label>
+    Date de Naissance :
+    <input type="date" [(ngModel)]="formCreds.birthday" name="birthday" placeholder="10/04/1990">
+  </label>
+  <br>
+  <label>
+    Mot de Passe :
+    <input type="password" [(ngModel)]="formCreds.password" name="password" placeholder="*****">
+  </label>
+  <br>
+  <button (click)="signupSubmit()">S'ENREGISTER</button>
+</form>

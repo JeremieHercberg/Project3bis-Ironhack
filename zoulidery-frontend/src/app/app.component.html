@@ -1,0 +1,31 @@
+<header>
+  <h1>ZOULIDERY</h1>
+  <nav>
+    <a routerLink="/">HOME</a>
+    <a routerLink="/manifeste">MANIFESTE</a>
+    <a routerLink="/boutique">BOUTIQUE</a>
+    <a routerLink="/actu">ACTU</a>
+    <a routerLink="/about">A PROPOS</a>
+
+    <span *ngIf="!userTruc.currentUser">
+      <a routerLink="/signup">S'ENREGISTRER</a>
+      <a routerLink="/login">SE CONNECTER</a>
+    </span>
+
+    <span *ngIf="userTruc.currentUser">
+      <b> Hello {{userTruc.currentUser.userName}}, welcome back !</b>
+      <a routerLink="/cart"> VOTRE PANIER</a>
+      <button (click)="logoutClick()">Log Out</button>
+    </span>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
+
+
+
+
+
+<footer>
+  <h3>Made with LOVE at Ironhack</h3>
+</footer>
